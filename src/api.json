@@ -1,0 +1,120 @@
+{
+    "banner": {
+        "gallary": {
+            "pizza" : {
+                "img" : "pizza.jpg",
+                "title": "Friday Night Pizza",
+                "icon": "local_pizza"
+            },
+
+            "tomatorice": {
+                "img": ["r1.jpg", "r3.jpg"],
+                "title": "rice & tomato stew",
+                "icon": "rice_bowl"
+            },
+
+            "soup": {
+                "img": "https://i.pinimg.com/originals/bd/06/e3/bd06e3b4de358b7c5700150e987b2850.jpg",
+                "title": "Delicious soup",
+                "icon": "soup"
+            },
+
+            "breakfast":{
+                "img": [
+                    "https://images.unsplash.com/photo-1538220856186-0be0e085984d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YnJlYWtmYXN0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                    "https://images.unsplash.com/photo-1497581175344-8a5f1a0142a5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fGJyZWFrZmFzdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                    "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnJlYWtmYXN0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                ],
+                "title": "Breakfast time",
+                "icon": "rice_bowl"
+            },
+            "coffee": {
+                "img": [
+                    "https://images.pexels.com/photos/230490/pexels-photo-230490.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                    "https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                ],
+                "title": "Tea and Coffee time",
+                "icon": "coffee"
+            },
+
+            "cake": {
+                "img": [
+                    "https://images.unsplash.com/photo-1589218909732-f304d13fbf2c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmlydGhkYXklMjBjYWtlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                    "https://unsplash.com/photos/LRIQuZyxKRM",
+                    "https://images.unsplash.com/photo-1578922864601-79dcc7cbcea9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmlydGhkYXklMjBjYWtlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                ],
+                "title": "Birthday gift",
+                "icon": "cake"
+            },
+            "meat":{
+                "img":[
+                    "https://images.pexels.com/photos/2491273/pexels-photo-2491273.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                    "https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                    "https://images.pexels.com/photos/929137/pexels-photo-929137.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                ],
+                "title": "Suasage & meat time",
+                "icon": "restaurant_menu"
+            },
+
+            "drink": {
+                "img": [
+                    "https://images.pexels.com/photos/3044/restaurant-love-romantic-dinner.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                    "https://images.pexels.com/photos/5538222/pexels-photo-5538222.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                ],
+                "title": "Drinks",
+                "icon": "wine_bar"
+            }
+        }
+    },
+
+    "availability": [
+        {
+            "img": "veg.jpeg",
+            "title": "Vegetable soup",
+            "price": "₦500",
+            "percentage": "58"
+        },
+
+        { 
+            "img": "r3.jpg",
+            "title": "jollof rice",
+            "price": "₦1,200",
+            "percentage": "66"
+        },
+
+        {        
+            "img": "r1.jpg",
+            "title": "jollof rice",
+            "price": "₦1,400",
+            "percentage": "80"
+        },
+
+        {
+            "img": "yam.jpeg",
+            "title": "Yam",
+            "price": "₦800",
+            "percentage": "43"
+        },
+
+        {
+            "img": "beans.jpeg",
+            "title": "Beans",
+            "price": "₦750",
+            "percentage": "49"
+        },
+
+        {
+            "img": "spag1.jpeg",
+            "title": "Spaghetti pasta",
+            "price": "₦1,100",
+            "percentage": "98"
+        },
+
+        {
+            "img": "tea.jpeg",
+            "title": "Tea",
+            "price": "₦500",
+            "percentage": "53"
+        }
+    ]
+}
