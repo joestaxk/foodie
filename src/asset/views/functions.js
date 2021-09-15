@@ -66,11 +66,30 @@ export default class foodieFunction {
         }
     }
 
+    inputObserver() {
+        const search_inp = document.getElementsByName('search')[0];
+        $on('keyup', search_inp, observe)
+
+        function observe(ev) {
+            if (ev.target.value) {
+                $get('.clear').style.cssText = "display: block"
+
+                $get('.clear').onclick = function() {
+                    ev.target.value = "";
+                    $get('.clear').style.cssText = "display: none"
+                }
+            } else if(ev.target.value === ""){
+                $get('.clear').style.cssText = "display: none"
+            }
+        }
+
+    }
     init() {
         return {
             pageGreeting: this.pageGreeting(),
             scrollBtn: this.scrollThroughBtn(),
-            removeAnglebtn: this.removeAnglebtnOnMoibile()
+            removeAnglebtn: this.removeAnglebtnOnMoibile(),
+            inpObs: this.inputObserver()
         }
     }
 }
