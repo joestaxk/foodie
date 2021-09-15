@@ -1,4 +1,4 @@
-import {$get} from './document'
+import {$get, $on} from './document'
 
 class animation {
     /**
@@ -42,25 +42,96 @@ class animation {
                 }
                 entries.target.querySelector('.postImage').classList.add('postImageR')
                 entries.target.querySelector('.postText').classList.add('postTextR')
-                entries.target.scrollTo({
-                    top: -200,
-                    left: 0,
-                    behavior: 'smooth'
-                  });
+                entries.target.scrollIntoView({behavior: "smooth"})
             })
-            // availEle.forEach(el => {
-            //     observe.unobserve(el)
-            // })
         }, option)
 
         availEle.forEach(el => {
             observer.observe(el)
         })
     }
+    static observeGalleries(){
+        const gallary = $get(null, '.meal');
+        const firstItem = gallary[0];
+        const lastItem = gallary[gallary.length -1];
+
+        const lAngle = $get('.availaible_btn_left');
+        const rAngle = $get('.availaible_btn_right')
+        const pAngle = $get('.btnAngle') //parent
+        if (!pAngle) return;
+
+        // FOR Left Angle
+        const observeLastElement = new IntersectionObserver( function (entry, observe) {
+            entry.forEach(entries => {
+                if (!entries.isIntersecting) {
+                    const btnHtml = `
+                        <div class="material-icons availaible_btn_left" id="t_left">chevron_left</div>
+                        <div class="material-icons availaible_btn_right" id="t_right">chevron_right</div>
+                    `;
+                    pAngle.innerHTML = btnHtml;
+                }
+            })
+        }, { threshold: .75 })
+        observeLastElement.observe(lastItem)
+
+
+        const obs_LAST = new IntersectionObserver( function (entry, observe) {
+            entry.forEach(entries => {
+                if (entries.isIntersecting) {
+                    const btnHtml = `
+                    <div class="material-icons availaible_btn_left" id="t_left">chevron_left</div>
+                    `;
+                    pAngle.innerHTML = btnHtml;
+
+                    if (rAngle) {
+                        rAngle.remove()
+                    }
+                }
+            })
+        }, { threshold: .75 })
+        obs_LAST.observe(lastItem)
+
+        const observe_First = new IntersectionObserver( function (entry, observe) {
+            entry.forEach(entries => {
+                if (!entries.isIntersecting) {
+                    const btnHtml = `
+                    <div class="material-icons availaible_btn_left" id="t_left">chevron_left</div>
+                    <div class="material-icons availaible_btn_right id="t_right">chevron_right</div>
+                    `;
+
+                    pAngle.innerHTML = btnHtml;
+                }
+            })
+        }, { threshold: .75 })
+        observe_First.observe(firstItem)
+
+        const obs_First = new IntersectionObserver( function (entry, observe) {
+            entry.forEach(entries => {
+                if (!entries.isIntersecting) {
+                    const btnHtml = `
+                    <div class="material-icons availaible_btn_left" id="t_left">chevron_left</div>
+                    <div class="material-icons availaible_btn_right" id="t_right">chevron_right</div>
+                    `;
+
+                    pAngle.innerHTML = btnHtml;
+                }
+                const btnHtml = `
+                <div class="material-icons availaible_btn_right" id="t_right">chevron_right</div>
+                `;
+                pAngle.innerHTML = btnHtml;
+
+                if (lAngle) {
+                    lAngle.remove()
+                }
+            })
+        }, { threshold: .75 })
+        obs_First.observe(firstItem)
+    }
 
     static init () {
         animation.observeGallery()
         animation.observeService()
+        animation.observeGalleries()
     }
 }
 

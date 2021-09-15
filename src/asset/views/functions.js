@@ -1,3 +1,4 @@
+import { $get, $on } from "./document";
 export default class foodieFunction {
     pageGreeting() {
         // get time
@@ -13,7 +14,7 @@ export default class foodieFunction {
         const on =  "We're avalaible now, we currently have!"
         const off =   "We're unavalaible now, but we currently have!"
 
-        if (date  < 12) {
+        if (date  <= 12) {
             today.greet = greetings[0]
             today.icon  = icon[0]
             today.status = on
@@ -21,7 +22,7 @@ export default class foodieFunction {
             today.greet = greetings[1]
             today.icon  = icon[1]
             today.status = on
-        } else if (date > 16 && date < 18) {
+        } else if (date > 16 && date <= 18) {
             today.greet = greetings[2]
             today.icon  = icon[2]
             today.status = on
@@ -30,14 +31,46 @@ export default class foodieFunction {
             today.icon  = icon[3]
             today.status = off
         }
+
         return today
     }
 
+    scrollThroughBtn() {
+        // find btn
+        $on('click', document.body, THISevent, 'once')
 
+        function THISevent(ev) {
+            const tar = ev.target; 
+            var element = $get('.feeds')
+            if (tar.id === 't_right') {
+                element.scrollBy({
+                    top: 0,
+                    left: parseInt(element.clientWidth) ,
+                    behaviour: 'smooth'
+                })
+            } else if (tar.id === 't_left') {
+                element.scrollBy({
+                    top: 0,
+                    left: -element.offsetWidth,
+                    behaviour: 'smooth'
+                })
+            }
+        }
+    }
+
+    removeAnglebtnOnMoibile() {
+        const mobile = navigator.platform;
+
+        if (!/^(linux|win|mac)/i.test(mobile)) {
+            $get('.btnAngle').remove()
+        }
+    }
 
     init() {
         return {
-            pageGreeting: this.pageGreeting()
+            pageGreeting: this.pageGreeting(),
+            scrollBtn: this.scrollThroughBtn(),
+            removeAnglebtn: this.removeAnglebtnOnMoibile()
         }
     }
 }

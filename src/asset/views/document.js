@@ -15,8 +15,9 @@ export const $get = function (selector, selectors) {
  * @param {String} event 
  * @param {HTMLElement} element 
  * @param {Function} cb 
+ * @param {any} any  
  */
 
-export const $on = function (event, element, cb) {
-    element.addEventListener(event, cb)
+export const $on = function (event, element, cb, any) {
+    element.addEventListener(event, cb, any)
 }

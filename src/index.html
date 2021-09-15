@@ -25,13 +25,11 @@
                     search
                 </span>
                 
-                <form>
+                <form class="form">
                     <input type="text" name="search" placeholder="Today's meal?" class="search_inp">
                 </form>
 
-                <span class="material-icons clear">
-                    clear
-                </span>
+                <span class="material-icons clear"> clear </span>
 
                 <div class="side">
                     <div class="buttons">
@@ -40,7 +38,9 @@
                     </div>
 
                     <div class="nav none">
-
+                        <form class="nav_form none">
+                            <input type="text" name="search" placeholder="Today's meal?" class="nav_search_inp">
+                        </form>
                         <ul class="list">
                             <li class="list-item active-nav-list"><a href="/">Home</a></li>
                             <li class="list-item"><a href="#about">About</a></li>
@@ -75,7 +75,10 @@
             <h2 class="opening">We're unavalaible now, but we currently have!</h2>
 
         <div class="availaible">
-            <div class="material-icons availaible_btn_left">chevron_left</div>
+            <div class="btnAngle">
+                <!-- <div class="material-icons availaible_btn_left">chevron_left</div> -->
+                <!-- <div class="material-icons availaible_btn_right">chevron_right</div> -->
+            </div>
             <div class="feeds">
                 <!-- <div class="meal">
                     <div class="img">
@@ -92,7 +95,6 @@
                     </div>
                 </div> -->
             </div>
-            <div class="material-icons availaible_btn_right">chevron_right</div>
         </div>
         <div class="service">
             <h1>Our Services</h1>

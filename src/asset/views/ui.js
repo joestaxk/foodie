@@ -7,7 +7,7 @@ class userInterface {
         this.loadGreetings()
         this.loadHeroBanner();
         this.loadAvalaibility()
-        this.showNavFn()
+        this.showNavFn();
     }
 
     loadHeroBanner() {
@@ -74,7 +74,6 @@ class userInterface {
     loadGreetings() {
         const newGreeting = new foodieFunction()
         const today = newGreeting.init();
-        console.log(newGreeting.init());
         const htmlMarkup = `
         <h2>${today.pageGreeting.greet}<span class="material-icons">${today.pageGreeting.icon}</span> </h2>
         <span>Available meal for ${today.pageGreeting.greet}</span>
@@ -123,6 +122,5 @@ class userInterface {
         })
     }
 }
-
 
 export default (new userInterface()).loadpage()
