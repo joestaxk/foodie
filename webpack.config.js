@@ -35,10 +35,11 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'testing',
-            template: './src/index.html'
+            template: './src/index.html',
+            title: 'Foodie Nation'
+
         })
     ],
 
-    mode: 'development'
+    mode: 'production'
 }

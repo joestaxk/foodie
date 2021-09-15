@@ -108,9 +108,7 @@ list .list-item, a{
     color: #4caf50;
     font-weight: bolder;
 }
-/* :not(.active-nav-list):hover {
-    color: #212121ad;
-} */
+
 .nav .register {
     text-align: center;
     margin-bottom: 2rem;

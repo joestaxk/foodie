@@ -45,7 +45,7 @@ export default class foodieFunction {
             if (tar.id === 't_right') {
                 element.scrollBy({
                     top: 0,
-                    left: parseInt(element.clientWidth) ,
+                    left: element.clientWidth,
                     behaviour: 'smooth'
                 })
             } else if (tar.id === 't_left') {
